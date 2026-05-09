@@ -70,14 +70,14 @@ class FontToolApp:
         self.root = root
         self.root.title("NazarievFontsTool v1.0")
         self.root.geometry("1000x700")
-        self.root.configure(bg="#2b2b2b")
+        self.root.configure(bg="#f0f0f0")
         
         self.style = ttk.Style()
         self.style.theme_use('clam')
-        self.style.configure("TFrame", background="#2b2b2b")
-        self.style.configure("TLabel", background="#2b2b2b", foreground="#ffffff", font=("Segoe UI", 10))
-        self.style.configure("TEntry", fieldbackground="#3c3f41", foreground="#ffffff", insertcolor="#ffffff")
-        self.style.configure("TButton", background="#3c3f41", foreground="#ffffff")
+        self.style.configure("TFrame", background="#f0f0f0")
+        self.style.configure("TLabel", background="#f0f0f0", foreground="#333333", font=("Segoe UI", 10))
+        self.style.configure("TEntry", fieldbackground="#ffffff", foreground="#000000", insertcolor="#000000")
+        self.style.configure("TButton", background="#e1e1e1", foreground="#333333")
         
         self.cells = []
         self.mappings = {} # index -> char
@@ -124,7 +124,7 @@ class FontToolApp:
             ttk.Label(top_panel, text="(pip install fonttools)", foreground="#ff5555").pack(side=tk.RIGHT, padx=5)
         
         # Middle Area: Scrollable Grid
-        self.canvas = tk.Canvas(self.root, bg="#1e1e1e", highlightthickness=0)
+        self.canvas = tk.Canvas(self.root, bg="#ffffff", highlightthickness=0)
         self.scrollbar = ttk.Scrollbar(self.root, orient="vertical", command=self.canvas.yview)
         self.scrollable_frame = ttk.Frame(self.canvas)
         
@@ -158,13 +158,13 @@ class FontToolApp:
         cols = 8
         
         # --- Add Dedicated Space Entry ---
-        space_frame = tk.Frame(self.scrollable_frame, bg="#4e4e4e", bd=2, relief=tk.SOLID, padx=5, pady=5)
+        space_frame = tk.Frame(self.scrollable_frame, bg="#e1e1e1", bd=2, relief=tk.SOLID, padx=5, pady=5)
         space_frame.grid(row=0, column=0, padx=5, pady=5)
         
-        tk.Label(space_frame, text="SPACE", bg="#4e4e4e", fg="#ffffff", font=("Segoe UI", 8, "bold")).pack()
-        tk.Label(space_frame, text="(ID 32)", bg="#4e4e4e", fg="#aaaaaa", font=("Segoe UI", 7)).pack()
+        tk.Label(space_frame, text="SPACE", bg="#e1e1e1", fg="#000000", font=("Segoe UI", 8, "bold")).pack()
+        tk.Label(space_frame, text="(ID 32)", bg="#e1e1e1", fg="#666666", font=("Segoe UI", 7)).pack()
         
-        space_entry = tk.Entry(space_frame, width=5, bg="#2b2b2b", fg="#ffffff", insertbackground="white", justify='center')
+        space_entry = tk.Entry(space_frame, width=5, bg="#ffffff", fg="#000000", insertbackground="black", justify='center')
         space_entry.insert(0, " ") # Pre-filled with space
         space_entry.pack(pady=2)
         self.mappings["space"] = " " # Special key for space mapping
@@ -175,7 +175,7 @@ class FontToolApp:
         # --- Render Sliced Cells ---
         for i, cell in enumerate(self.cells):
             grid_idx = i + 1 # Offset by 1 for space
-            frame = tk.Frame(self.scrollable_frame, bg="#3c3f41", bd=1, relief=tk.RAISED, padx=5, pady=5)
+            frame = tk.Frame(self.scrollable_frame, bg="#e1e1e1", bd=1, relief=tk.RAISED, padx=5, pady=5)
             frame.grid(row=grid_idx // cols, column=grid_idx % cols, padx=5, pady=5)
             
             # Preview scaled up
@@ -185,11 +185,11 @@ class FontToolApp:
             )
             tk_img = ImageTk.PhotoImage(scaled_img)
             
-            lbl = tk.Label(frame, image=tk_img, bg="#1e1e1e")
+            lbl = tk.Label(frame, image=tk_img, bg="#ffffff")
             lbl.image = tk_img 
             lbl.pack()
             
-            entry = tk.Entry(frame, width=5, bg="#2b2b2b", fg="#ffffff", insertbackground="white", justify='center')
+            entry = tk.Entry(frame, width=5, bg="#ffffff", fg="#000000", insertbackground="black", justify='center')
             entry.pack(pady=2)
             
             # Bind entry to mapping
