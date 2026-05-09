@@ -16,9 +16,6 @@
 | ![Source Sheet](./images/source_sheet.jpg) | ![GUI Preview](./images/interface.jpg) | ![Final Font](./images/result_preview.jpg) |
 | *Your original pixel-art numbers & symbols.* | *The intuitive mapping & setup GUI.* | *The perfectly rendered vector output.* |
 
-> [!NOTE]
-> *Replace the placeholder images in the `./images` directory with your own screenshots to showcase your font.*
-
 ---
 
 ## 🔥 Why NazarievFontsTool?
