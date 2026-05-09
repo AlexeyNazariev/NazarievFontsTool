@@ -13,7 +13,7 @@
 
 | 🖌️ Source Sprite Sheet | 🖥️ Tool Interface | 🚀 Final Result (Unity/OS) |
 | :---: | :---: | :---: |
-| ![Source Sheet](./images/source_sheet.png) | ![GUI Preview](./images/interface.png) | ![Final Font](./images/result_preview.png) |
+| ![Source Sheet](./images/source_sheet.jpg) | ![GUI Preview](./images/interface.jpg) | ![Final Font](./images/result_preview.jpg) |
 | *Your original pixel-art numbers & symbols.* | *The intuitive mapping & setup GUI.* | *The perfectly rendered vector output.* |
 
 > [!NOTE]
